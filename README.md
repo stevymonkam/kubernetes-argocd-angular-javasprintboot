@@ -1,6 +1,7 @@
 # kubernetes-argocd-angular-javasprintboot
 
 
+```yaml
 ton-projet-gitops/
 ├── apps/
 │   ├── frontend/
@@ -58,7 +59,7 @@ ton-projet-gitops/
     ├── frontend-prod.yaml
     ├── backend-prod.yaml
     └── mysql-prod.yaml
-
+```
 
 ```yaml
 kubectl apply -f - <<EOF
