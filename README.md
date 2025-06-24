@@ -1,5 +1,65 @@
 # kubernetes-argocd-angular-javasprintboot
 
+
+ton-projet-gitops/
+├── apps/
+│   ├── frontend/
+│   │   ├── base/
+│   │   │   └── deployment.yaml
+│   │   │   └── service.yaml
+│   │   │   └── kustomization.yaml
+│   │   └── overlays/
+│   │       ├── dev/
+│   │       │   └── kustomization.yaml
+│   │       ├── staging/
+│   │       │   └── kustomization.yaml
+│   │       └── prod/
+│   │           └── kustomization.yaml
+│
+│   ├── backend/
+│   │   ├── base/
+│   │   │   └── deployment.yaml
+│   │   │   └── service.yaml
+│   │   │   └── kustomization.yaml
+│   │   └── overlays/
+│   │       ├── dev/
+│   │       │   └── kustomization.yaml
+│   │       ├── staging/
+│   │       │   └── kustomization.yaml
+│   │       └── prod/
+│   │           └── kustomization.yaml
+│
+│   └── mysql/
+│       ├── base/
+│       │   └── deployment.yaml
+│       │   └── service.yaml
+│       │   └── pvc.yaml
+│       │   └── kustomization.yaml
+│       └── overlays/
+│           ├── dev/
+│           │   └── kustomization.yaml
+│           ├── staging/
+│           │   └── kustomization.yaml
+│           └── prod/
+│               └── kustomization.yaml
+│
+├── projects/
+│   ├── dev-proj.yaml
+│   ├── staging-proj.yaml
+│   └── prod-proj.yaml
+│
+└── argocd-apps/
+    ├── frontend-dev.yaml
+    ├── backend-dev.yaml
+    ├── mysql-dev.yaml
+    ├── frontend-staging.yaml
+    ├── backend-staging.yaml
+    ├── mysql-staging.yaml
+    ├── frontend-prod.yaml
+    ├── backend-prod.yaml
+    └── mysql-prod.yaml
+
+
 ```yaml
 kubectl apply -f - <<EOF
 apiVersion: argoproj.io/v1alpha1
