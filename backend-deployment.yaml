@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: feature
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: stevymonkam/backend1:1.0
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:mysql://mysqldb:3306/ecomerce?useSSL=false"
+        - name: SPRING_DATASOURCE_USERNAME
+          value: "stevy"
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "manounou"

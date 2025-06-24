@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: angular-app-service
+  namespace: feature
+spec:
+  selector:
+    app: angular-app
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30080
+
