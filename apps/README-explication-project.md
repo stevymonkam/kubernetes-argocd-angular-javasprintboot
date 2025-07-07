@@ -219,3 +219,168 @@ DRY : ne pas dupliquer les manifest YAML
 CI/CD : intégration automatique de builds
 
 GitOps : déploiement via Git et ArgoCD
+
+
+5. Stratégie de Déploiement
+GitOps Workflow
+
+Développement : Push du code → CI/CD build l'image → Push vers registry
+Déploiement : Update du tag d'image dans les manifests K8s → Commit vers repo GitOps
+ArgoCD : Détecte les changements → Synchronise automatiquement les clusters
+Validation : Health checks et tests automatiques post-déploiement
+
+Environnements
+
+DEV : 1 replica par service, ressources minimales, auto-sync activé
+STAGING : 2 replicas, ressources moyennes, sync manuel pour validation
+PROD : 5+ replicas, HPA activé, ressources élevées, stratégie de rollback
+
+6. Monitoring et Observabilité
+Métriques collectées
+
+Application : Latence, throughput, erreurs (via Prometheus)
+Infrastructure : CPU, mémoire, réseau, stockage
+Business : Transactions, utilisateurs actifs, revenus
+
+Alerting
+
+Critique : Service down, haute latence, erreurs 5xx
+Warning : Usage élevé des ressources, latence modérée
+Info : Déploiements, scaling events
+
+7. Sécurité
+Mesures implémentées
+
+RBAC : Accès basé sur les rôles pour chaque environnement
+Network Policies : Isolation réseau entre namespaces
+Secrets Management : Sealed Secrets ou External Secrets Operator
+Image Scanning : Vulnérabilité scanning via Trivy
+Pod Security Standards : Enforcement des bonnes pratiques
+
+Cette structure permet une gestion robuste et évolutive d'une application multi-tiers en entreprise avec une approche GitOps complète.
+
+
+Workflow de déploiement typique :
+
+Développeur : Push code → CI build image → Update tag dans manifests
+ArgoCD : Détecte changement → Sync cluster → Health check
+Monitoring : Alertes automatiques si problème détecté
+Rollback : Automatique si les health checks échouent
+
+Cette structure est production-ready et peut gérer des milliers d'utilisateurs avec une équipe de 5-10 développeurs.
+
+
+
+# pour deployer sous forme de microservice separe 
+
+explication : comme le montre la figure il ya un project par environement et 3 application qui seront fils de ce project une app pour le front end , une app pour le back end , une app pour la base de donne je dois creer le namespace dev e m'assure que le repos a une branche feature car les app pointes decu
+
+## NB : il manque juste les projects et app des autres environement
+
+dans project il ya le yaml du project je lance juste sa creer un project 
+
+```yaml
+kubectl apply -f - <<EOF
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: angular-dev-project
+  namespace: argocd
+spec:
+  description: Projet Angular + Java Spring Boot
+  clusterResourceWhitelist:
+  - group: ""
+    kind: '*'
+  destinations:
+  - namespace: dev
+    server: https://kubernetes.default.svc
+  namespaceResourceWhitelist:
+  - group: ""
+    kind: '*'
+  - group: "apps"
+    kind: "Deployment"
+  sourceRepos:
+  - https://github.com/stevymonkam/kubernetes-argocd-angular-javasprintboot.git
+  EOF
+```
+
+# e puis les applications 
+
+
+
+```yaml
+kubectl apply -f - <<EOF
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backend-dev-app
+  namespace: argocd
+spec:
+  project: angular-dev-project
+  source:
+    repoURL: https://github.com/stevymonkam/kubernetes-argocd-angular-javasprintboot.git
+    targetRevision: feature
+    path: apps/backend/overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+  EOF
+```
+
+
+```yaml
+kubectl apply -f - <<EOF
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mysql-dev-app
+  namespace: argocd
+spec:
+  project: angular-dev-project
+  source:
+    repoURL: https://github.com/stevymonkam/kubernetes-argocd-angular-javasprintboot.git
+    targetRevision: feature
+    path: apps/mysql/overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+      EOF
+```
+
+
+```yaml
+kubectl apply -f - <<EOF
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: angular-dev-app
+  namespace: argocd
+spec:
+  project: angular-dev-project
+  source:
+    repoURL: https://github.com/stevymonkam/kubernetes-argocd-angular-javasprintboot.git
+    targetRevision: feature
+    path: apps/frontend/overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+  EOF
+```
