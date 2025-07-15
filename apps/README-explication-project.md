@@ -107,7 +107,7 @@ spec:
 EOF
 ```
 
-
+# image utiliser pour le front : stevymonkam/front5:1.0
 Excellente question — je vais te détailler étape par étape comment fonctionne un projet structuré comme ça dans un vrai workflow GitOps avec ArgoCD + Kustomize.
 
 📊 Fonctionnement pas à pas de ce projet
