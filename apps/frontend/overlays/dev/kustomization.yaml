@@ -6,6 +6,6 @@ resources:
 
 # Surcharge de l'image
 images:
-- name: stevymonkam/front5:1.0  # remplacez par le nom dans votre deployment base
+- name: stevymonkam/front5 # remplacez par le nom dans votre deployment base
   newName: frontdev
   newTag: latest
