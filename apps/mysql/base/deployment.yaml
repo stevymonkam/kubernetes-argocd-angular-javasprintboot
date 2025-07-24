@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysqldb
-  namespace: feature
+  namespace: dev
   labels:
     app: mysqldb
 spec:

@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backend-dev-app
+  namespace: argocd
+spec:
+  project: angular-dev-project
+  source:
+    repoURL: https://github.com/stevymonkam/kubernetes-argocd-angular-javasprintboot.git
+    targetRevision: feature
+    path: apps/backend/overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

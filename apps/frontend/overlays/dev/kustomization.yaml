@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+# Surcharge de l'image
+images:
+- name: stevymonkam/front5 # remplacez par le nom dans votre deployment base
+  newName: stevymonkam/frontdevs3new
+  newTag: latest
