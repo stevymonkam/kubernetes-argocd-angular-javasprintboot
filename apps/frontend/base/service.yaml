@@ -11,4 +11,9 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
+<<<<<<< HEAD
       nodePort: 30089
+=======
+      nodePort: 30083
+
+>>>>>>> feature
