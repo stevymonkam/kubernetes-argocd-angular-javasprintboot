@@ -8,7 +8,7 @@ resources:
 images:
 - name: angular-app-dev
   newName: stevymonkam/angular-app-dev
-  newTag: 49-dev
+  newTag: 50-dev
 - name: stevymonkam/front5
   newName: stevymonkam/frontdevs3new
   newTag: latest
