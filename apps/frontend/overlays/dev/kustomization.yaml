@@ -8,6 +8,9 @@ patchesStrategicMerge:
 
 # Surcharge de l'image
 images:
-- name: stevymonkam/front5 # remplacez par le nom dans votre deployment base
+- name: angular-app-dev
+  newName: stevymonkam/angular-app-dev
+  newTag: 50-dev
+- name: stevymonkam/front5
   newName: stevymonkam/frontdevs3new
   newTag: latest
