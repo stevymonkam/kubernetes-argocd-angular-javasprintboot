@@ -12,6 +12,6 @@ images:
 - name: angular-app-prod
   newName: stevymonkam/angular-app-prod
   newTag: 27-prod
-- name: stevymonkam/front5
+- name: angular-app-prod
   newName: stevymonkam/angular-app-prod
   newTag: 26-prod
