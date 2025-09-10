@@ -11,7 +11,4 @@ replicas:
 images:
 - name: angular-app-prod
   newName: stevymonkam/angular-app-prod
-  newTag: 27-prod
-- name: angular-app-prod
-  newName: stevymonkam/angular-app-prod
-  newTag: 26-prod
+  newTag: 28-prod
