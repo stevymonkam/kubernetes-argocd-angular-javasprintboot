@@ -12,10 +12,13 @@ ton-projet-gitops/
 │   │   └── overlays/
 │   │       ├── dev/
 │   │       │   └── kustomization.yaml
+│   │       │   └── service-patch.yaml
 │   │       ├── staging/
 │   │       │   └── kustomization.yaml
+│   │       │   └── service-patch.yaml
 │   │       └── prod/
 │   │           └── kustomization.yaml
+│           └── service-patch.yaml
 │
 │   ├── backend/
 │   │   ├── base/
@@ -25,10 +28,13 @@ ton-projet-gitops/
 │   │   └── overlays/
 │   │       ├── dev/
 │   │       │   └── kustomization.yaml
+│   │       │   └── service-patch.yaml
 │   │       ├── staging/
 │   │       │   └── kustomization.yaml
+│   │       │   └── service-patch.yaml
 │   │       └── prod/
 │   │           └── kustomization.yaml
+│           └── service-patch.yaml
 │
 │   └── mysql/
 │       ├── base/
@@ -39,10 +45,13 @@ ton-projet-gitops/
 │       └── overlays/
 │           ├── dev/
 │           │   └── kustomization.yaml
+│           │   └── service-patch.yaml
 │           ├── staging/
 │           │   └── kustomization.yaml
+│           │   └── service-patch.yaml
 │           └── prod/
 │               └── kustomization.yaml
+│               └── service-patch.yaml
 │
 ├── projects/
 │   ├── dev-proj.yaml
