@@ -9,6 +9,6 @@ replicas:
 - count: 5
   name: angular-app
 images:
-- name: angular-app-prod
+- name: stevymonkam/front5
   newName: stevymonkam/angular-app-prod
   newTag: 28-prod

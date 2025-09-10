@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: angular-app-container
-        image: angular-app-prod:1.0
+        image: stevymonkam/front5:1.0
         ports:
         - containerPort: 80
 
