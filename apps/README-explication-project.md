@@ -1,5 +1,42 @@
 # kubernetes-argocd-angular-javasprintboot
 ## stevy yep
+## nb : pour que l'asyc sur arco fonctione il faut changer le nom de l'image que la pipeline a ecrit par le nom de l'image qui est dans base voir exemple dans overlays/dev/kustomization.yaml
+
+
+pour deployer un projet et une app il faut : creer les namespace si neccessaire car c est creer automatiquement par argocd quand on creer un project
+
+- cas du namespace prod : 
+prendre le project prod-proj.yaml et l'appliquer avec la commande suivante :
+
+```yaml
+kubectl apply -f prod-proj.yaml
+```
+et la le project est cree et on peut deployer les apps
+pour deployer les apps il faut :
+prendre le app frontend-prod.yaml et l'appliquer avec la commande suivante :
+
+```yaml
+kubectl apply -f frontend-prod.yaml
+```
+et la l'app est deployer dans le namespace prod : il faut noter que ce project prod est utiliser pour tous les app du namespace prod
+
+en suite pour le backend il faut :
+pour deployer le backend il faut :
+prendre le app backend-prod.yaml et l'appliquer avec la commande suivante :
+
+```yaml
+kubectl apply -f backend-prod.yaml
+```
+et la l'app est deployer dans le namespace prod : il faut noter que ce project prod est utiliser pour tous les app du namespace prod
+
+pour deployer le mysql il faut :
+pour deployer le mysql il faut :
+prendre le app mysql-prod.yaml et l'appliquer avec la commande suivante :
+
+```yaml
+kubectl apply -f mysql-prod.yaml
+```
+et la l'app est deployer dans le namespace prod : il faut noter que ce project prod est utiliser pour tous les app du namespace prod
 
 ```yaml
 ton-projet-gitops/

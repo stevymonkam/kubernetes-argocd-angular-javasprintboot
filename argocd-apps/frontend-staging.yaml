@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mysql-dev-app
+  name: angular-staging-app
   namespace: argocd
 spec:
-  project: dev-project
+  project: staging-project
   source:
     repoURL: https://github.com/stevymonkam/kubernetes-argocd-angular-javasprintboot.git
     targetRevision: main
-    path: apps/mysql/overlays/dev
+    path: apps/frontend/overlays/staging
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev
+    namespace: staging
   syncPolicy:
     automated:
       prune: true

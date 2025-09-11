@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mysql-dev-app
+  name: angular-prod-app
   namespace: argocd
 spec:
-  project: dev-project
+  project: prod-project
   source:
     repoURL: https://github.com/stevymonkam/kubernetes-argocd-angular-javasprintboot.git
     targetRevision: main
-    path: apps/mysql/overlays/dev
+    path: apps/frontend/overlays/prod
   destination:
     server: https://kubernetes.default.svc
-    namespace: dev
+    namespace: prod
   syncPolicy:
     automated:
       prune: true

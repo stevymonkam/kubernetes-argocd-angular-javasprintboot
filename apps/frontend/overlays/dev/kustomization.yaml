@@ -8,9 +8,15 @@ patchesStrategicMerge:
 
 # Surcharge de l'image
 images:
-- name: angular-app-dev
+- name: stevymonkam/front5
   newName: stevymonkam/angular-app-dev
   newTag: 50-dev
 - name: stevymonkam/front5
   newName: stevymonkam/frontdevs3new
   newTag: latest
+
+
+#nb : pour que l'asyc sur arco fonctione il faut changer le nom
+# de l'image que la pipeline a ecrit par le nom de l'image qui est 
+# dans base voir exemple dans overlays/dev/kustomization.yaml
+# donc remplacer angular-app-dev par stevymonkam/front5

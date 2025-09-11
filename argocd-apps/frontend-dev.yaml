@@ -4,10 +4,10 @@ metadata:
   name: angular-dev-app
   namespace: argocd
 spec:
-  project: angular-dev-project
+  project: dev-project
   source:
     repoURL: https://github.com/stevymonkam/kubernetes-argocd-angular-javasprintboot.git
-    targetRevision: feature
+    targetRevision: main
     path: apps/frontend/overlays/dev
   destination:
     server: https://kubernetes.default.svc
