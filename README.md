@@ -228,3 +228,6 @@ DRY : ne pas dupliquer les manifest YAML
 CI/CD : intégration automatique de builds
 
 GitOps : déploiement via Git et ArgoCD
+
+
+
