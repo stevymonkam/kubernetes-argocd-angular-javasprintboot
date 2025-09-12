@@ -18,7 +18,7 @@ prendre le app frontend-prod.yaml et l'appliquer avec la commande suivante :
 ```yaml
 kubectl apply -f frontend-prod.yaml
 ```
-et la l'app est deployer dans le namespace prod : il faut noter que ce project prod est utiliser pour tous les app du namespace prod
+et la l'app est deployer dans le namespace prod : il faut noter que ce project prod est utiliser pour tous les app du namespace prod cet a dire les app frontend-prod.yaml backend-prod.yaml et mysql-prod.yaml doivent etre creer a partire de ce project prod
 
 en suite pour le backend il faut :
 pour deployer le backend il faut :
