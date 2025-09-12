@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
-  namespace: dev
   labels:
     app: backend
 spec:
@@ -17,9 +16,9 @@ spec:
     spec:
       containers:
       - name: backend
-        image: stevymonkam/backend1:1.0
+        image: stevymonkam/imageback2:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8086
         env:
         - name: SPRING_DATASOURCE_URL
           value: "jdbc:mysql://mysqldb:3306/ecomerce?useSSL=false"
@@ -27,3 +26,22 @@ spec:
           value: "stevy"
         - name: SPRING_DATASOURCE_PASSWORD
           value: "manounou"
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8086
+          initialDelaySeconds: 60
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8086
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m

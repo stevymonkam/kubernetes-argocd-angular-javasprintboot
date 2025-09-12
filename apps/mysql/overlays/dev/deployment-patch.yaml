@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysqldb
+spec:
+  template:
+    spec:
+      containers:
+      - name: mysqldb
+        env:
+        - name: MYSQL_DATABASE
+          value: ecomerce
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
