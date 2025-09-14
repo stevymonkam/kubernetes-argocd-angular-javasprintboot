@@ -6,9 +6,10 @@ metadata:
   labels:
     app: backend
 spec:
-  type: ClusterIP
+  type: NodePort  # ← Changez seulement ça
   ports:
     - port: 8086
       targetPort: 8086
+      nodePort: 30086  # ← Ajoutez cette ligne
   selector:
     app: backend
