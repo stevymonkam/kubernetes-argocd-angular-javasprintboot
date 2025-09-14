@@ -8,10 +8,8 @@ patchesStrategicMerge:
 replicas:
 - count: 5
   name: angular-app
+# Surcharge de l'image
 images:
-- name: angular-app-prod
+- name: stevymonkam/front5 # remplacez par le nom dans votre deployment base
   newName: stevymonkam/angular-app-prod
   newTag: 42-prod
-- name: stevymonkam/front5
-  newName: stevymonkam/angular-app-prod
-  newTag: 41-prod
