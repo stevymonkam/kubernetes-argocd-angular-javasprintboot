@@ -8,4 +8,4 @@ resources:
 images:
 - name: stevymonkam/front5 # remplacez par le nom dans votre deployment base
   newName: stevymonkam/angular-app-prod
-  newTag: 41-prod
+  newTag: 42-prod
