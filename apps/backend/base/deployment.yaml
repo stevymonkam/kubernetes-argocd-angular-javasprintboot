@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: stevymonkam/backend1:1.0
+        image: stevymonkam/imageback2:latest
         ports:
         - containerPort: 8086
         env:
