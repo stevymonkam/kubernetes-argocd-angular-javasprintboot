@@ -19,7 +19,7 @@ spec:
       - name: backend
         image: stevymonkam/backend1:1.0
         ports:
-        - containerPort: 8080
+        - containerPort: 8086
         env:
         - name: SPRING_DATASOURCE_URL
           value: "jdbc:mysql://mysqldb:3306/ecomerce?useSSL=false"

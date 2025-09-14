@@ -7,5 +7,5 @@ resources:
 # Surcharge de l'image
 images:
 - name: stevymonkam/front5 # remplacez par le nom dans votre deployment base
-  newName: stevymonkam/frontdevs3new
-  newTag: latest
+  newName: stevymonkam/angular-app-prod
+  newTag: 41-prod
