@@ -3,7 +3,3 @@ kind: Kustomization
 resources:
   - ../../base
 
-images:
-- name: stevymonkam/backend1
-  newName: imageback2
-  newTag: latest
