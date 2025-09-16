@@ -12,7 +12,7 @@ replicas:
 images:
 - name: angular-app-prod
   newName: stevymonkam/angular-app-prod
-  newTag: 44-prod
+  newTag: 45-prod
 - name: stevymonkam/front5
   newName: stevymonkam/angular-app-prod
   newTag: 42-prod
