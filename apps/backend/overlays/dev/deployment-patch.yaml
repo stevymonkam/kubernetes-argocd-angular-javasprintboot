@@ -10,10 +10,3 @@ spec:
         env:
         - name: SPRING_DATASOURCE_URL
           value: "jdbc:mysql://mysqldb:3306/ecomerce_dev?useSSL=false"
-        resources:
-          requests:
-            memory: "128Mi"
-            cpu: "100m"
-          limits:
-            memory: "256Mi"
-            cpu: "200m"
