@@ -9,4 +9,4 @@ spec:
       - name: backend
         env:
         - name: SPRING_DATASOURCE_URL
-          value: "jdbc:mysql://mysqldb:3306/ecomerce_dev?useSSL=false"
+          value: "jdbc:mysql://mysqldb:3307/ecomerce_dev?useSSL=false"
