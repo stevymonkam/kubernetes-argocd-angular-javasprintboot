@@ -9,7 +9,7 @@ spec:
     - port: 3306
       targetPort: 3306
       protocol: TCP
-      name: mysqldb
+      name: mysql
   selector:
     app: mysqldb
   type: ClusterIP  # Remplacer clusterIP: None par type: ClusterIP
