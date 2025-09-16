@@ -12,4 +12,4 @@ spec:
       name: mysql
   selector:
     app: mysqldb
-  type: ClusterIP  # Ajouter cette ligne pour remplacer clusterIP: None
+  type: ClusterIP  # Remplacer clusterIP: None par type: ClusterIP
