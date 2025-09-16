@@ -14,7 +14,8 @@ spec:
   selector:
     app: mysqldb
   type: ClusterIP
-  clusterIP: ""  # Force la suppression de "None"
+ 
+
 
 
 
