@@ -6,11 +6,12 @@ metadata:
     environment: prod
 spec:
   ports:
-    - port: 3308
+    - port: 3306
       targetPort: 3306
       protocol: TCP
       name: mysqldb
  
+
 
 
 
