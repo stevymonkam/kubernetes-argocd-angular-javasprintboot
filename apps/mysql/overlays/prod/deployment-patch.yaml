@@ -9,11 +9,4 @@ spec:
       - name: mysqldb
         env:
         - name: MYSQL_DATABASE
-          value: ecomerce
-        resources:
-          requests:
-            memory: "256Mi"
-            cpu: "250m"
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
+          value: ecomerce_prod
