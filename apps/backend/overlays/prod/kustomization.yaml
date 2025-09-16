@@ -10,10 +10,10 @@ patches:
   - path: service-patch.yaml
     target:
       kind: Service
-      name: mysqldb
+      name: backend
   - path: deployment-patch.yaml
     target:
       kind: Deployment
-      name: mysqldb
+      name: backend
 
 
