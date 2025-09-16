@@ -7,10 +7,6 @@ spec:
     spec:
       containers:
       - name: backend
-        resources:
-          requests:
-            memory: "512Mi"
-            cpu: "500m"
-          limits:
-            memory: "1Gi"
-            cpu: "1000m"
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:mysql://mysqldb:3308/ecomerce_prod?useSSL=false"
