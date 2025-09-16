@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: mysqldb
   labels:
-    app: mysqldb
     environment: prod
 spec:
   ports:
@@ -11,10 +10,8 @@ spec:
       targetPort: 3306
       protocol: TCP
       name: mysql
-  selector:
-    app: mysqldb
-  type: ClusterIP
  
+
 
 
 
