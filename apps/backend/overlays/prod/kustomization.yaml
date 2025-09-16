@@ -6,4 +6,14 @@ namespace: prod
 resources:
   - ../../base
 
+patches:
+  - path: service-patch.yaml
+    target:
+      kind: Service
+      name: mysqldb
+  - path: deployment-patch.yaml
+    target:
+      kind: Deployment
+      name: mysqldb
+
 
