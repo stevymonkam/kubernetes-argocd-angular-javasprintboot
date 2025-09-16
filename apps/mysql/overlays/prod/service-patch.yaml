@@ -13,8 +13,9 @@ spec:
       name: mysqldb
   selector:
     app: mysqldb
-  type: ClusterIP        # Ajouter cette ligne pour surcharger clusterIP: None
-  clusterIP: ""          # Ou explicitement définir clusterIP à vide pour un service standard
+  # Supprimer complètement clusterIP: None en le redéfinissant
+  $patch: replace
+
 
 
 
