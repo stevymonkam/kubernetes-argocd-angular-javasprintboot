@@ -11,6 +11,11 @@ spec:
       targetPort: 3306
       protocol: TCP
       name: mysqldb
+  selector:
+    app: mysqldb
+  type: ClusterIP        # Ajouter cette ligne pour surcharger clusterIP: None
+  clusterIP: ""          # Ou explicitement définir clusterIP à vide pour un service standard
+
 
 
 
