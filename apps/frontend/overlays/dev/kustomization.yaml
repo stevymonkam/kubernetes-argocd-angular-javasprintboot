@@ -1,10 +1,18 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: dev 
+namespace: dev
 resources:
 - ../../base
 patchesStrategicMerge:
 - service-patch.yaml
+replicas:
+- count: 5
+  name: angular-app
+# Surcharge de l'image
+images:
+- name: stevymonkam/front5 # remplacez par le nom dans votre deployment base
+  newName: stevymonkam/angular-app-prod
+  newTag: 42-prod
 
 
 #nb : pour que l'asyc sur arco fonctione il faut changer le nom
