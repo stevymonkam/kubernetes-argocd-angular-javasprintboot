@@ -10,5 +10,6 @@ spec:
     - port: 3307
       targetPort: 3306
       protocol: TCP
-      name: mysql
+      name: mysqldb
+
 
