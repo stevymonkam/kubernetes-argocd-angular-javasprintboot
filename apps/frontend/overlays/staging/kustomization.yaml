@@ -1,7 +1,15 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: staging 
+namespace: staging
 resources:
 - ../../base
 patchesStrategicMerge:
 - service-patch.yaml
+replicas:
+- count: 5
+  name: angular-app
+# Surcharge de l'image
+images:
+- name: stevymonkam/front5 # remplacez par le nom dans votre deployment base
+  newName: stevymonkam/angular-app-prod
+  newTag: 42-prod
