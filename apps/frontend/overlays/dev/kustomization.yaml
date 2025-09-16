@@ -11,8 +11,8 @@ replicas:
 # Surcharge de l'image
 images:
 - name: stevymonkam/front5 # remplacez par le nom dans votre deployment base
-  newName: stevymonkam/angular-app-dev
-  newTag: 49-dev
+  newName: stevymonkam/angular-app-prod
+  newTag: 42-prod
 
 
 #nb : pour que l'asyc sur arco fonctione il faut changer le nom
