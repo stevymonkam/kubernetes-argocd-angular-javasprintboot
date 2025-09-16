@@ -7,4 +7,5 @@ spec:
     - protocol: TCP
       port: 8086
       targetPort: 8086
-      nodePort: 30088
+      nodePort: 30086
+
