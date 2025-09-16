@@ -10,6 +10,9 @@ replicas:
   name: angular-app
 # Surcharge de l'image
 images:
-- name: stevymonkam/front5 # remplacez par le nom dans votre deployment base
+- name: angular-app-prod
+  newName: stevymonkam/angular-app-prod
+  newTag: 43-prod
+- name: stevymonkam/front5
   newName: stevymonkam/angular-app-prod
   newTag: 42-prod
