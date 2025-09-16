@@ -11,10 +11,7 @@ spec:
       targetPort: 3306
       protocol: TCP
       name: mysqldb
-  selector:
-    app: mysqldb
-  # Supprimer complètement clusterIP: None en le redéfinissant
-  $patch: replace
+
 
 
 
